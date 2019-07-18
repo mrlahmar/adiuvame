@@ -138,20 +138,37 @@ def users():
 @login_required
 def newpost():
     # user reached the route via POST
-    
+    if request.method == "POST":
+        # return an error message if post title field is empty
+        if not request.form.get("posttitle"):
+            return "<h1>MISSING POST TITLE</h1>"
+        # return an error message if post content field is empty
+        if not request.form.get("postcontent"):
+            return "<h1>MISSING POST CONTENT</h1>"
+        db.execute("INSERT INTO post (post_title,post_content,post_publisher) VALUES (:post_title,:post_content,:post_publisher)", {"post_title":request.form.get("posttitle"),"post_content":request.form.get("postcontent"),"post_publisher":session["user_id"]})
+        db.commit()
+        return redirect(url_for('myposts'))
     # user reached the route via GET
     return render_template("newpost.html")
 
-@app.route("/mypost",methods=["GET","POST"])
-def mypost():
-    return render_template("mypost.html")
+@app.route("/posts/<postid>",methods=["GET","POST"])
+def posts(postid):
+    post_detail = db.execute("SELECT * FROM post WHERE post_id=:postid", {"postid":postid}).fetchone()
+    if not post_detail:
+        return "ERROR DB"
+    return render_template("posts.html",thepost=post_detail)
+
+@app.route("/myposts",methods=["GET","POST"])
+@login_required
+def myposts():
+    posts = db.execute("SELECT * FROM post WHERE post_publisher=:current_user",{"current_user":session["user_id"]}).fetchall()
+    return render_template("myposts.html",posts=posts)
 
 def errorhandler(e):
     """Handle error"""
     if not isinstance(e, HTTPException):
         e = InternalServerError()
     return "ERROR"
-
 
 # Listen for errors
 for code in default_exceptions:

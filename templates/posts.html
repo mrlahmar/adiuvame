@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block main %}
-<form action="/mypost" method="POST">
-    <h5>Title of the post</h5>
-    <p>Content of the post which can a lot of text and a lot of words and a lot of things</p>
+<form action="/posts" method="POST">
+    <h5>{{ thepost.post_title }}</h5>
+    <p>{{ thepost.post_content }}</p>
     <div class="form-group">
         <div class="form-group">
             <label for="comment">Comment:</label>
