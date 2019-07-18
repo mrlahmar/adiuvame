@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My Post
+{% endblock %}
+
+{% block main %}
+<form action="/mypost" method="POST">
+    <h5>Title of the post</h5>
+    <p>Content of the post which can a lot of text and a lot of words and a lot of things</p>
+    <div class="form-group">
+        <div class="form-group">
+            <label for="comment">Comment:</label>
+            <textarea class="form-control" id="comment" rows="3"></textarea>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Comment</button>
+</form>
+{% endblock %}
