@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block main %}
+<main class="container p-5">
 <form action="/posts" method="POST">
     <h5>{{ thepost.post_title }}</h5>
     <p>{{ thepost.post_content }}</p>
@@ -16,4 +17,5 @@
     </div>
     <button class="btn btn-primary" type="submit">Comment</button>
 </form>
+</main>
 {% endblock %}

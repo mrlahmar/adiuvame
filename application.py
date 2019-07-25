@@ -134,9 +134,9 @@ def users():
     users = db.execute("SELECT * FROM users").fetchall()
     return render_template("users.html",users=users)
 
-@app.route("/newpost",methods=["GET","POST"])
+@app.route("/publish",methods=["GET","POST"])
 @login_required
-def newpost():
+def publish():
     # user reached the route via POST
     if request.method == "POST":
         # return an error message if post title field is empty
@@ -147,9 +147,9 @@ def newpost():
             return "<h1>MISSING POST CONTENT</h1>"
         db.execute("INSERT INTO post (post_title,post_content,post_publisher) VALUES (:post_title,:post_content,:post_publisher)", {"post_title":request.form.get("posttitle"),"post_content":request.form.get("postcontent"),"post_publisher":session["user_id"]})
         db.commit()
-        return redirect(url_for('myposts'))
+        return redirect(url_for('myactivity'))
     # user reached the route via GET
-    return render_template("newpost.html")
+    return render_template("publish.html")
 
 @app.route("/posts/<postid>",methods=["GET","POST"])
 def posts(postid):
@@ -158,11 +158,16 @@ def posts(postid):
         return "ERROR DB"
     return render_template("posts.html",thepost=post_detail)
 
-@app.route("/myposts",methods=["GET","POST"])
+@app.route("/myactivity",methods=["GET","POST"])
 @login_required
-def myposts():
+def myactivity():
     posts = db.execute("SELECT * FROM post WHERE post_publisher=:current_user",{"current_user":session["user_id"]}).fetchall()
-    return render_template("myposts.html",posts=posts)
+    return render_template("myactivity.html",posts=posts)
+
+@app.route("/settings",methods=["GET","POST"])
+@login_required
+def settings():
+    return render_template("settings.html")
 
 def errorhandler(e):
     """Handle error"""

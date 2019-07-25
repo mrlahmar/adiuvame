@@ -5,9 +5,11 @@
 {% endblock %}
 
 {% block main %}
+<main class="container p-5">
     <ul>
         {% for user in users %}
         <li>{{ user.user_id }} - {{ user.username }}</li>
         {% endfor %}
     </ul>
+</main>
 {% endblock %}

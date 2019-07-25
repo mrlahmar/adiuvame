@@ -1,29 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Viga&display=swap');
+/*
+html,body {
+    font-family: 'Montserrat', sans-serif;
+}*/
+
 body {
-    /* background color for all pages */
-    background-color: rgb(186, 208, 228);
+    /* background color for all pages 
+    background-color: black; */
+    background-image: url("bg-image.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
 }
 
-nav .navbar-brand
-{
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+nav .navbar-brand {
     /* size for brand */
     font-size: xx-large;
+    color: white !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
 }
 
-main .form-control
-{
+main .form-control {
     /* center form controls */
     display: inline-block;
-
     /* override Bootstrap's 100% width for form controls */
     width: auto;
 }
 
-
-main
-{
-    /* scroll horizontally as needed */
-    overflow-x: auto;
-
+main {
     /* center contents */
     text-align: center;
 }
@@ -36,4 +47,107 @@ main
 
 .non-style {
     list-style-type: none;
+}
+
+.register-btn {
+    border-radius: 1em;
+}
+
+.login-btn {
+    border-radius: 1em;
+}
+
+.form-container {
+    background-color: rgba(0, 0, 0, 0.9);
+    display: inline-block;
+    width: 35%;
+    height: auto;
+    border-radius: .7em;
+    padding-bottom: .5em;
+}
+
+.form-inputs {
+    border: 0;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+    height: 45px;
+    max-width: 260px;
+    width: 100%;
+    line-height: 45px;
+    padding-left: 1em;
+}
+
+.form-inputs:focus {
+    background-color: #454545;
+    padding-left: .9em;
+} 
+.form-inputs::placeholder {
+    color: #8c8c8c;
+}
+
+.form-inputs:focus::placeholder {
+    font-size: 12px;
+    transform: translateY(-70%);
+} 
+
+.form-inputs::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #8c8c8c;
+}
+.form-inputs::-moz-placeholder { /* Firefox 19+ */
+    color: #8c8c8c;
+}
+.form-inputs::-ms-input-placeholder { /* IE 10+ */
+    color: #8c8c8c;
+}
+.form-inputs::-moz-placeholder { /* Firefox 18- */
+    color: #8c8c8c;
+}
+
+.form-inputs:focus::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 12px;
+    transform: translateY(-70%);
+} 
+
+.form-inputs:focus::-moz-placeholder { /* Firefox 19+ */
+    font-size: 12px;
+    transform: translateY(70%);
+}
+.form-inputs:focus:-ms-input-placeholder { /* IE 10+ */
+    font-size: 12px;
+    transform: translateY(-70%);
+}
+.form-inputs:focus:-moz-placeholder { /* Firefox 18- */
+    font-size: 12px;
+    transform: translateY(-70%);
+}
+
+.login-register-form {
+    color: white;
+    margin: 1.5em 2em 1.5em 2em;
+}
+
+.form-title {
+    text-align: left;
+    padding-left: .6em;
+    margin-bottom: .7em;
+}
+
+button[name="register-sbmt"] , button[name="login-sbmt"] {
+    width: 100%;
+    max-width: 260px;
+}
+
+.intro-title {
+    font-family: 'Viga', cursive;
+    color: white;
+    font-size: 5em;
+    text-shadow: 1.5px .5px #657477;
+}
+
+main[name="home-main"] {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 15rem !important;
 }
