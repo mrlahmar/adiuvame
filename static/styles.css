@@ -1,18 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Viga&display=swap');
-/*
-html,body {
-    font-family: 'Montserrat', sans-serif;
-}*/
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 body {
-    /* background color for all pages 
-    background-color: black; */
+    /* background color for all pages */
+    background-color: black;
+    color: white; /*
     background-image: url("bg-image.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100%;
+    background-size: 100%;*/
 }
 
 nav {
@@ -31,18 +30,12 @@ main .form-control {
     /* center form controls */
     display: inline-block;
     /* override Bootstrap's 100% width for form controls */
-    width: auto;
+    width: 70%;
 }
 
 main {
     /* center contents */
     text-align: center;
-}
-
-.post-el {
-    height: 5em;
-    width: 15em;
-    background-color: white;
 }
 
 .non-style {
@@ -128,6 +121,7 @@ main {
 }
 
 .form-title {
+    color: white;
     text-align: left;
     padding-left: .6em;
     margin-bottom: .7em;
@@ -150,4 +144,102 @@ main[name="home-main"] {
     justify-content: center;
     align-content: center;
     padding-top: 15rem !important;
+}
+
+/* Code for post item */
+
+main[name="all-posts"] 
+{
+    color: black;
+}
+
+.post-container {
+    background: white;
+    color: black;
+    width: 70%;
+    height: auto;
+    border-radius: 1em;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    padding-left: 20px;
+    padding-top: .4em;
+    padding-right: 20px;
+    margin: auto;
+}
+
+.post-publisher {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: rgb(110, 110, 110);
+}
+
+.post-content {
+    color: black;
+    padding-bottom: .7em;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+}
+
+.post-title {
+    margin-top: .4em;
+    margin-bottom: .6em;
+}
+
+#post-link:link {
+    color: black;
+}
+
+#post-link:visited {
+    color: black;
+}
+
+#post-link:active {
+    color: black;
+}
+
+/* */
+.newpost-title {
+    color: white;
+    text-align: left;
+    padding-left: 5em;
+    margin-bottom: .7em;
+}
+
+/* */
+.chng-pass-title {
+    margin-bottom: 1em;
+}
+
+/* User */
+.user-item {
+    background-color: rgb(226, 226, 226);
+    color: black;
+    width: 25%;
+    min-width: 25%;
+    margin: auto;
+    border-radius: 25px;
+}
+
+#user-fname {
+    padding-top: .4em;
+}
+
+#user_username {
+    padding-bottom: .4em;
+    color:rgb(110, 110, 110);
+}
+
+#comment {
+    width: 100%;
+}
+
+button[name="cmnt-btn"] {
+    font-family: sans-serif;
+    margin-bottom: .7em;
+}
+
+form[name="cmnt-form"] {
+    text-align: right;
 }

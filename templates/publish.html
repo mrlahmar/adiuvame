@@ -5,17 +5,18 @@
 {% endblock %}
 
 {% block main %}
-<form action="/newpost" method="POST">
+<main class="container p-5">
+<form action="/publish" method="POST">
+    <h2 class="newpost-title">New Post</h2>
     <div class="form-group">
-        <label for="posttitle">Post Title:</label>
-        <input autocomplete="off" autofocus class="form-control" name="posttitle" placeholder="Title" type="text">
+        <input autocomplete="off" autofocus class="form-control" name="posttitle" placeholder="Post Title" type="text">
     </div>
     <div class="form-group">
         <div class="form-group">
-            <label for="postcontent">Post Content:</label>
-            <textarea class="form-control" name="postcontent" id="postcontent" rows="3"></textarea>
+            <textarea class="form-control" name="postcontent" id="postcontent" rows="7" placeholder="Post Content"></textarea>
         </div>
     </div>
-    <button class="btn btn-primary" type="submit">Publish</button>
+    <button class="btn btn-info" type="submit">Publish</button>
 </form>
+</main>
 {% endblock %}

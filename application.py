@@ -30,7 +30,7 @@ def after_request(response):
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("in2.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -164,10 +164,14 @@ def myactivity():
     posts = db.execute("SELECT * FROM post WHERE post_publisher=:current_user",{"current_user":session["user_id"]}).fetchall()
     return render_template("myactivity.html",posts=posts)
 
-@app.route("/settings",methods=["GET","POST"])
+@app.route("/changepassword",methods=["GET","POST"])
 @login_required
 def settings():
-    return render_template("settings.html")
+    return render_template("changepassword.html")
+
+@app.route("/error")
+def error():
+    return render_template("error.html")
 
 def errorhandler(e):
     """Handle error"""

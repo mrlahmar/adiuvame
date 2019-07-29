@@ -6,10 +6,13 @@
 
 {% block main %}
 <main class="container p-5">
-    <ul>
-        {% for user in users %}
-        <li>{{ user.user_id }} - {{ user.username }}</li>
-        {% endfor %}
-    </ul>
+    {% for user in users %}
+    <a href="#">
+        <div class="user-item">
+            <h5 id="user-fname">{{ user.fullname }}</h5>
+            <p id="user_username">@{{ user.username }}</p>
+        </div>
+    </a>
+    {% endfor %}
 </main>
 {% endblock %}

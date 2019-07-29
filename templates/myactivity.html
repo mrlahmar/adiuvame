@@ -7,8 +7,13 @@ My Posts
 {% block main %}
 <main class="container p-5">
 {% for post in posts %}
-<h5><a href="/posts/{{post.post_id}}">{{post.post_title}}</a></h5>
-<p>{{post.post_content}}</p>
+<div class="post-container">
+    <span class="post-publisher">Posted by <a href="#">{{ post.post_publisher}}</a> 10 hours ago</span>
+    <a id="post-link" href="/posts/{{post.post_id}}"><h5 class="post-title">{{post.post_title}}</h5>
+    <p class="post-content">
+        {{post.post_content}}
+    </p></a>
+</div>
 {% endfor %}
 </main>
 {% endblock %}
