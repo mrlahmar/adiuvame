@@ -17,6 +17,8 @@ This Adiuvame, my CS50 final project, Adiuvame is a latin word that means "Help 
 ![Screenshot 9](preview/myactivity.png)
 ![Screenshot 10](preview/changepassword.png)
 
+### Video Demo : https://youtu.be/DUwzERJ6t_E
+
 # What Technologies I've used
 
 ## Frontend
