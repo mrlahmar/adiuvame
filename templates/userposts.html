@@ -1,12 +1,13 @@
 {% extends "layout.html" %}
 
 {% block title %}
-My Activity
+{{ username }} Posts
 {% endblock %}
 
 {% block main %}
 <main class="container p-5">
-<h2 class="activity-titles">My Activity</h2>
+<h2 class="activity-titles">{{ username }} Posts</h2>
+{% if posts %}
 {% for post in posts %}
 <div class="post-container">
     <span class="post-publisher">Posted by <a href="#">{{ post.username}}</a> on {{ post.post_timestamp | timestampformat }}</span>
@@ -16,5 +17,8 @@ My Activity
     </p></a>
 </div>
 {% endfor %}
+{% else %}
+<h3 class="activity-titles">{{ username }} hasn't posted yet</h3>
+{% endif %}
 </main>
 {% endblock %}

@@ -8,12 +8,12 @@
 <main class="container p-5">
 <div class="form-container">
 <form class="login-register-form" action="/login" method="POST">
-    <h2 class="form-title">Login</h2>
+    <h2 class="activity-titles">Login</h2>
     <div class="form-group">
-        <input autocomplete="off" autofocus class="form-inputs" name="userlogin" placeholder="Username or Email" type="text">
+        <input autocomplete="off" autofocus class="form-inputs" name="userlogin" placeholder="Username or Email" type="text" required>
     </div>
     <div class="form-group">
-        <input class="form-inputs" name="password" placeholder="Password" type="password">
+        <input class="form-inputs" name="password" placeholder="Password" type="password" required>
     </div>
     <button class="btn btn-info" type="submit" name="login-sbmt">Log In</button>
 </form>

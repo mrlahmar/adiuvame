@@ -4,14 +4,18 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 body {
-    /* background color for all pages */
-    background-color: black;
-    color: white; /*
+    color: white; 
     background-image: url("bg-image.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100%;*/
+    background-size: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+    body {
+        background: black;
+    }
 }
 
 nav {
@@ -54,6 +58,7 @@ main {
     background-color: rgba(0, 0, 0, 0.9);
     display: inline-block;
     width: 35%;
+    min-width: 230px;
     height: auto;
     border-radius: .7em;
     padding-bottom: .5em;
@@ -118,13 +123,6 @@ main {
 .login-register-form {
     color: white;
     margin: 1.5em 2em 1.5em 2em;
-}
-
-.form-title {
-    color: white;
-    text-align: left;
-    padding-left: .6em;
-    margin-bottom: .7em;
 }
 
 button[name="register-sbmt"] , button[name="login-sbmt"] {
@@ -200,14 +198,6 @@ p {
 }
 
 /* */
-.newpost-title {
-    color: white;
-    text-align: left;
-    padding-left: 5em;
-    margin-bottom: .7em;
-}
-
-/* */
 .chng-pass-title {
     margin-bottom: 1em;
 }
@@ -217,9 +207,14 @@ p {
     background-color: rgb(226, 226, 226);
     color: black;
     width: 25%;
-    min-width: 25%;
-    margin: auto;
-    border-radius: 25px;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+@media only screen and (max-width: 750px) {
+    .user-item {
+        width: 45%;
+    }
 }
 
 #user-fname {
@@ -242,4 +237,31 @@ button[name="cmnt-btn"] {
 
 form[name="cmnt-form"] {
     text-align: right;
+}
+
+.activity-titles {
+    margin-bottom: 1em;
+    color: white;
+}
+
+.post-delete {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: red;
+}
+
+.post-delete:hover, .post-delete:active, .post-delete:visited {
+    color: red;
+}
+
+.post-delete-span {
+    float: right;
+}
+
+h3 {
+    color: red;
+}
+
+.aboutlink:link, .aboutlink:hover, .aboutlink:active, .aboutlink:visited {
+    color: white;
 }

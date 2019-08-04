@@ -7,7 +7,7 @@
 {% block main %}
 <main class="container p-5">
     {% for user in users %}
-    <a href="#">
+    <a href="/users/{{user.username}}">
         <div class="user-item">
             <h5 id="user-fname">{{ user.fullname }}</h5>
             <p id="user_username">@{{ user.username }}</p>

@@ -1,25 +1,32 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    My Post
+    {{ thepost.post_title }}
 {% endblock %}
 
 {% block main %}
 <main class="container p-5">
     <div class="post-container">
-        <span class="post-publisher">Posted by <a href="#">mrlahmar</a> 10 hours ago</span>
+        <span class="post-publisher">Posted by <a href="#">{{thepost.username}}</a> on {{ thepost.post_timestamp | timestampformat }}</span>
+        {% if session["user_id"] == thepost.user_id %}
+        <span class="post-delete-span"><a class="post-delete" href="/delete/{{thepost.post_id}}">Delete Post</a></span>
+        {% endif %}
         <h5 class="post-title">{{ thepost.post_title }}</h5>
         <p class="post-content">
             {{ thepost.post_content }}
         </p>
+        <a href="mailto:{{thepost.email}}"><p style="color: red">Email the post writer</p></a>
         <hr>
-        <span class="post-publisher">Comment by <a href="#">wael</a> 2 hours ago</span>
-        <p class="post-content">and this guy to buy an electric wheelchair because he goes to school everyday Hello, I'm
-            Ala Lahmar</p>
+        {% if comments %}
+            {% for comment in comments %}
+            <span class="post-publisher">Comment by <a href="#">{{ comment.username }}</a> on {{ comment.comment_timestamp | timestampformat }}</span>
+            <p class="post-content">{{ comment.comment_content }}</p>
+            {% endfor %}
+        {% endif %}
         <h5>Comment</h5>
-        <form action="/posts" method="POST" name="cmnt-form">
+        <form action="/posts/{{thepost.post_id}}" method="POST" name="cmnt-form">
             <div class="form-group">
-                <textarea class="form-control" id="comment" rows="3"></textarea>
+                <textarea class="form-control" id="comment" name="mycomment" rows="3" required></textarea>
             </div>
             <button class="btn btn-info" type="submit" name="cmnt-btn">Comment</button>
         </form>

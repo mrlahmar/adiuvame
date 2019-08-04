@@ -6,7 +6,9 @@
 
 {% block main %}
 <main class="container" name="error-main">
-    <h1>OOPS! ERROR</h1>
-    <p>This is not the page you're not looking for</p>
+    <h1>OOPS!</h1>
+    <h2>{{code}}</h2>
+    <h3>{{message}}</h3>
+    <p>{{code_description}}</p>
 </main>
 {% endblock %}

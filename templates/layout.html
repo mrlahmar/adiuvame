@@ -23,7 +23,7 @@
     </head>
     <body>
         <!-- Navigation bar -->
-        <nav class="navbar navbar-expand-md">
+        <nav class="navbar navbar-dark navbar-expand-md">
             <a class="navbar-brand" href="/">ADIUVAME</a>
             <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button">
                 <span class="navbar-toggler-icon"></span>
@@ -40,6 +40,9 @@
                         <li class="nav-item"><a class="badge badge-pill badge-info" href="/logout">Log Out</a></li>
                     </ul>
                 {% else %}
+                    <ul class="navbar-nav mr-auto mt-2">
+                        <li class="nav-item pl-3"><a href="/about" class="aboutlink">About Adiuvame</a></li>
+                    </ul>
                     <ul class="navbar-nav ml-auto mt-2">
                         <li class="nav-item pr-2"><a href="/login" class="btn btn-outline-info my-2 my-sm-0" type="button">Login</a></li>
                         <li class="nav-item"><a href="/register" class="btn btn-info my-2 my-sm-0" type="button">Register</a></li>

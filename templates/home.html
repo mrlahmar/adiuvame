@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Home
+{% endblock %}
+
+{% block main %}
+<main class="container p-5" name="all-posts">
+    <h2 class="activity-titles">Latest Posts</h2>
+    {% for post in all_posts %}
+    <div class="post-container">
+        <span class="post-publisher">Posted by <a href="/users/{{post.username}}">{{ post.username }}</a> on {{ post.post_timestamp | timestampformat }}</span>
+        <a id="post-link" href="/posts/{{post.post_id}}"><h5 class="post-title">{{ post.post_title }}</h5>
+        <p class="post-content">{{ post.post_content }}</p></a>
+    </div>
+    {% endfor %}
+</main>
+{% endblock %}
